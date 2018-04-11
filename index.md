@@ -1,0 +1,82 @@
+---
+layout: page
+title: Infomofo
+heads:
+  - heads/head1.jpg
+  - heads/head2.jpg
+  - heads/head3.jpg
+  - heads/head4.jpg
+  - heads/head5.jpg
+  - heads/head6.jpg
+  - heads/head7.png
+tops:
+  - tops/shirt1.jpg
+  - tops/shirt2.jpg
+  - tops/shirt3.jpg
+  - tops/shirt4.jpg
+  - tops/shirt5.jpg
+  - tops/shirt6.jpg
+  - tops/shirt7.jpg
+  - tops/shirt8.jpg
+  - tops/shirt9.jpg
+  - tops/shirt10.jpg
+  - tops/shirt11.png
+---
+<div class="heads">
+{% for head in page.heads %}
+<img src="{{ head }}" />
+{% endfor %}
+</div>
+
+<div class="tops">
+{% for top in page.tops %}
+<img src="{{ top }}" />
+{% endfor %}
+</div>
+
+<button onClick="shuffle()">randomize</button>
+
+<script>
+  var heads = new Siema({
+    selector: '.heads',
+    duration: 400,
+    perPage: 5,
+    startIndex: 0,
+    draggable: true,
+    multipleDrag: true,
+    threshold: 20,
+    loop: true,
+  });
+
+  var tops = new Siema({
+    selector: '.tops',
+    duration: 400,
+    perPage: 5,
+    startIndex: 0,
+    draggable: true,
+    multipleDrag: true,
+    threshold: 20,
+    loop: true,
+  });
+
+  var randomIndex = function(length) {
+    var random = Math.random();
+    var mult = random * length;
+    return Math.floor(mult);
+  };
+
+  var shuffling = false;
+
+  function shuffle() {
+    var randomHead = randomIndex(heads.innerElements.length);
+    shuffling = true;
+    heads.goTo(randomHead);
+    tops.goTo(randomIndex(tops.innerElements.length), function() {
+      shuffling = false;
+    });
+  };
+
+  window.setTimeout(function() {
+      shuffle();
+    }, 2000);
+</script>

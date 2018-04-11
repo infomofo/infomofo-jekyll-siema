@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html ⚡ lang="en">
+  <head>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width"><link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <base href="/">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="google-site-verification" content="jsI1Lqk0RnnUo0WeKhuZSaK5pSY1p0Q5koSx_ukoBgo" />
+  <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <title>Infomofo</title>
+  <meta name="twitter:title" content="Infomofo">
+  <meta name="description" content="The official website of infomofo">
+  <meta property="og:title" content="Infomofo" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://localhost:4000/" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@infomofo">
+  <meta name="twitter:creator" content="@infomofo">
+  <meta name="twitter:description" content="The official website of infomofo">
+  
+    <meta property="og:image" content="http://localhost:4000" />
+    <meta name="twitter:image" content="http://localhost:4000">
+  
+  <link rel="canonical" href="http://localhost:4000/">
+  <style>
+  
+  
+  </style>
+  <script src="https://pawelgrzybek.com/siema/assets/siema.min.js"></script>
+</head>
+
+  <body>
+    <main class="content content--page" role="main">
+  <article class="post">
+    <section class="post-content">
+      <div class="heads">
+
+  <p><img src="heads/head1.jpg" /></p>
+
+  <p><img src="heads/head2.jpg" /></p>
+
+  <p><img src="heads/head3.jpg" /></p>
+
+  <p><img src="heads/head4.jpg" /></p>
+
+  <p><img src="heads/head5.jpg" /></p>
+
+  <p><img src="heads/head6.jpg" /></p>
+
+  <p><img src="heads/head7.png" /></p>
+
+</div>
+
+<div class="tops">
+
+  <p><img src="tops/shirt1.jpg" /></p>
+
+  <p><img src="tops/shirt2.jpg" /></p>
+
+  <p><img src="tops/shirt3.jpg" /></p>
+
+  <p><img src="tops/shirt4.jpg" /></p>
+
+  <p><img src="tops/shirt5.jpg" /></p>
+
+  <p><img src="tops/shirt6.jpg" /></p>
+
+  <p><img src="tops/shirt7.jpg" /></p>
+
+  <p><img src="tops/shirt8.jpg" /></p>
+
+  <p><img src="tops/shirt9.jpg" /></p>
+
+  <p><img src="tops/shirt10.jpg" /></p>
+
+  <p><img src="tops/shirt11.png" /></p>
+
+</div>
+
+<p><button onclick="shuffle()">randomize</button></p>
+
+<script>
+  var heads = new Siema({
+    selector: '.heads',
+    duration: 400,
+    perPage: 5,
+    startIndex: 0,
+    draggable: true,
+    multipleDrag: true,
+    threshold: 20,
+    loop: true,
+  });
+
+  var tops = new Siema({
+    selector: '.tops',
+    duration: 400,
+    perPage: 5,
+    startIndex: 0,
+    draggable: true,
+    multipleDrag: true,
+    threshold: 20,
+    loop: true,
+  });
+
+  var randomIndex = function(length) {
+    var random = Math.random();
+    var mult = random * length;
+    return Math.floor(mult);
+  };
+
+  var shuffling = false;
+
+  function shuffle() {
+    var randomHead = randomIndex(heads.innerElements.length);
+    shuffling = true;
+    heads.goTo(randomHead);
+    tops.goTo(randomIndex(tops.innerElements.length), function() {
+      shuffling = false;
+    });
+  };
+
+  window.setTimeout(function() {
+      shuffle();
+    }, 2000);
+</script>
+
+
+    </section>
+  </article>
+</main>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-15045829-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-15045829-1');
+</script>
+
+  </body>
+</html>

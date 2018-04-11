@@ -1,0 +1,34 @@
+# Jekyll main configuration file
+# See https://jekyllrb.com/docs/configuration/ to further customize this file
+# Defaults settings https://jekyllrb.com/docs/configuration/#default-configuration
+
+title: Infomofo
+description: "The official website of infomofo"
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://willchiong.com" # the base hostname & protocol for your site
+
+# Google Analytics
+analytics_id: "UA-15045829-1"
+
+# Build settings
+markdown: kramdown
+
+kramdown:
+  parse_block_html: true
+
+defaults:
+  - scope:
+      path: "articles"
+    values:
+      image: true
+
+collections:
+  heads:
+    output: true
+  tops:
+    output: true
+  bottoms:
+    output: true
+  shoes: 
+    output: true
