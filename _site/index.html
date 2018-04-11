@@ -42,7 +42,12 @@
   <link rel="canonical" href="http://localhost:4000/">
   <style>
   
-  
+  .main { display: flex; flex-direction: column; align-items: center; }
+
+.siemaSlider { margin-bottom: 1px; width: 100%; }
+
+.siemaSlider--slide { height: 100px; max-width: 100px; max-height: 100px; background-color: #e0e0e0; }
+
   </style>
   <script src="https://pawelgrzybek.com/siema/assets/siema.min.js"></script>
 </head>
@@ -51,55 +56,57 @@
     <main class="content content--page" role="main">
   <article class="post">
     <section class="post-content">
-      <div class="heads">
+      <div class="main">
+  <div id="heads" class="siemaSlider">
 
-  <p><img src="heads/head1.jpg" /></p>
+    <p><img src="heads/head1.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="heads/head2.jpg" /></p>
+    <p><img src="heads/head2.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="heads/head3.jpg" /></p>
+    <p><img src="heads/head3.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="heads/head4.jpg" /></p>
+    <p><img src="heads/head4.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="heads/head5.jpg" /></p>
+    <p><img src="heads/head5.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="heads/head6.jpg" /></p>
+    <p><img src="heads/head6.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="heads/head7.png" /></p>
+    <p><img src="heads/head7.png" class="siemaSlider--slide" /></p>
 
-</div>
+  </div>
 
-<div class="tops">
+  <div id="tops" class="siemaSlider">
 
-  <p><img src="tops/shirt1.jpg" /></p>
+    <p><img src="tops/shirt1.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="tops/shirt2.jpg" /></p>
+    <p><img src="tops/shirt2.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="tops/shirt3.jpg" /></p>
+    <p><img src="tops/shirt3.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="tops/shirt4.jpg" /></p>
+    <p><img src="tops/shirt4.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="tops/shirt5.jpg" /></p>
+    <p><img src="tops/shirt5.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="tops/shirt6.jpg" /></p>
+    <p><img src="tops/shirt6.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="tops/shirt7.jpg" /></p>
+    <p><img src="tops/shirt7.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="tops/shirt8.jpg" /></p>
+    <p><img src="tops/shirt8.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="tops/shirt9.jpg" /></p>
+    <p><img src="tops/shirt9.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="tops/shirt10.jpg" /></p>
+    <p><img src="tops/shirt10.jpg" class="siemaSlider--slide" /></p>
 
-  <p><img src="tops/shirt11.png" /></p>
+    <p><img src="tops/shirt11.png" class="siemaSlider--slide" /></p>
 
+  </div>
 </div>
 
 <p><button onclick="shuffle()">randomize</button></p>
 
 <script>
   var heads = new Siema({
-    selector: '.heads',
+    selector: '#heads',
     duration: 400,
     perPage: 5,
     startIndex: 0,
@@ -110,7 +117,7 @@
   });
 
   var tops = new Siema({
-    selector: '.tops',
+    selector: '#tops',
     duration: 400,
     perPage: 5,
     startIndex: 0,
@@ -133,6 +140,7 @@
     shuffling = true;
     heads.goTo(randomHead);
     tops.goTo(randomIndex(tops.innerElements.length), function() {
+      console.log(tops.currentSlide);
       shuffling = false;
     });
   };

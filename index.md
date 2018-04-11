@@ -22,23 +22,25 @@ tops:
   - tops/shirt10.jpg
   - tops/shirt11.png
 ---
-<div class="heads">
+<div class="main">
+<div id="heads" class="siemaSlider">
 {% for head in page.heads %}
-<img src="{{ head }}" />
+<img src="{{ head }}" class="siemaSlider--slide"/>
 {% endfor %}
 </div>
 
-<div class="tops">
+<div id="tops" class="siemaSlider">
 {% for top in page.tops %}
-<img src="{{ top }}" />
+<img src="{{ top }}" class="siemaSlider--slide" />
 {% endfor %}
+</div>
 </div>
 
 <button onClick="shuffle()">randomize</button>
 
 <script>
   var heads = new Siema({
-    selector: '.heads',
+    selector: '#heads',
     duration: 400,
     perPage: 5,
     startIndex: 0,
@@ -49,7 +51,7 @@ tops:
   });
 
   var tops = new Siema({
-    selector: '.tops',
+    selector: '#tops',
     duration: 400,
     perPage: 5,
     startIndex: 0,
@@ -72,6 +74,7 @@ tops:
     shuffling = true;
     heads.goTo(randomHead);
     tops.goTo(randomIndex(tops.innerElements.length), function() {
+      console.log(tops.currentSlide);
       shuffling = false;
     });
   };
