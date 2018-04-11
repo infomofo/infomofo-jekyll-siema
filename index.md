@@ -39,26 +39,14 @@ tops:
 <button onClick="shuffle()">randomize</button>
 
 <script>
-  var heads = new Siema({
-    selector: '#heads',
-    duration: 400,
-    perPage: 5,
-    startIndex: 0,
-    draggable: true,
-    multipleDrag: true,
-    threshold: 20,
-    loop: true,
+  var heads = new Flickity('#heads', {
+    wrapAround: true,
+    autoPlay: false,
   });
 
-  var tops = new Siema({
-    selector: '#tops',
-    duration: 400,
-    perPage: 5,
-    startIndex: 0,
-    draggable: true,
-    multipleDrag: true,
-    threshold: 20,
-    loop: true,
+  var tops = new Flickity('#tops', {
+    wrapAround: true,
+    autoPlay: false,
   });
 
   var randomIndex = function(length) {
@@ -70,11 +58,11 @@ tops:
   var shuffling = false;
 
   function shuffle() {
-    var randomHead = randomIndex(heads.innerElements.length);
+    var randomHead = randomIndex(heads.cells.length);
     shuffling = true;
-    heads.goTo(randomHead);
-    tops.goTo(randomIndex(tops.innerElements.length), function() {
-      console.log(tops.currentSlide);
+    heads.select(randomHead);
+    tops.select(randomIndex(tops.cells.length), function() {
+      console.log(tops.selectedIndex);
       shuffling = false;
     });
   };
