@@ -40,7 +40,7 @@ tops:
 </div>
 </div>
 
-<button onClick="shuffle()" class="randomButton"><i class="fa fa-random fa-2x"/></button>
+<button onClick="shuffle()" class="randomButton" disabled><i class="fa fa-random fa-2x"/></button>
 
 <script>
   var heads = new Flickity('#heads', {
@@ -63,15 +63,17 @@ tops:
     return Math.floor(mult);
   };
 
-  var shuffling = false;
+  var randomButton = document.querySelector('#randomButton');
 
   function shuffle() {
+    randomButton.classList.add('fa-spin');
+    randomButton.setAttribute('disabled', true);
+
     var randomHead = randomIndex(heads.cells.length);
-    shuffling = true;
     heads.selectCell(randomHead);
     tops.selectCell(randomIndex(tops.cells.length), function() {
-      console.log(tops.selectedIndex);
-      shuffling = false;
+      randomButton.classList.remove('fa-spin');
+      randomButton.removeAttribute('disabled');
     });
   };
 

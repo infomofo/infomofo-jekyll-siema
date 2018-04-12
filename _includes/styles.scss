@@ -45,4 +45,9 @@
     right: 30px;
     top: 10px;
   }
+
+  &:disabled, &[disabled] {
+    background: #ddd;
+    opacity: 0.3;
+  }
 }
