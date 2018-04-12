@@ -1,0 +1,48 @@
+.carousel--slide {
+  opacity: 0.3;
+
+  &.is-selected{
+    opacity: 1.0;
+  }
+  img {
+    height: 200px;
+  }
+}
+
+.randomButton {
+  background-color: rgb(255,64,129);
+  border-radius: 50%;
+  bottom: 5px;
+  bottom: initial;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  color: rgb(255,255,255);
+  height: 56px;
+  line-height: 56px;
+  min-width: 0;
+  padding-top: 7px;
+  position: fixed;
+  right: 15px;
+  top: 10px;
+  transition-property: background-color,box-shadow;
+  transition: .2s linear;
+  width: 56px;
+  z-index: 20;
+  background-clip: padding-box;
+  overflow: hidden;
+  vertical-align: middle;
+  box-sizing: border-box;
+  white-space: nowrap;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  outline: 0;
+
+  @media screen and (min-width: 768px) {
+    bottom: initial;
+    right: 30px;
+    top: 10px;
+  }
+}

@@ -42,8 +42,15 @@
   <link rel="canonical" href="http://localhost:4000/TODO.html">
   <style>
   
-  
+  .carousel--slide { opacity: 0.3; }
+.carousel--slide.is-selected { opacity: 1.0; }
+.carousel--slide img { height: 200px; }
+
+.randomButton { background-color: #ff4081; border-radius: 50%; bottom: 5px; bottom: initial; box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); color: white; height: 56px; line-height: 56px; min-width: 0; padding-top: 7px; position: fixed; right: 15px; top: 10px; transition-property: background-color,box-shadow; transition: .2s linear; width: 56px; z-index: 20; background-clip: padding-box; overflow: hidden; vertical-align: middle; box-sizing: border-box; white-space: nowrap; cursor: pointer; align-items: center; justify-content: center; display: flex; flex-direction: row; text-decoration: none; outline: 0; }
+@media screen and (min-width: 768px) { .randomButton { bottom: initial; right: 30px; top: 10px; } }
+
   </style>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </head>

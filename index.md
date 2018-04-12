@@ -23,30 +23,38 @@ tops:
   - tops/shirt11.png
 ---
 <div class="main">
-<div id="heads" class="siemaSlider">
+<div id="heads" class="carousel">
 {% for head in page.heads %}
+<div class="head carousel--slide">
 <img src="{{ head }}" class="siemaSlider--slide"/>
+</div>
 {% endfor %}
 </div>
 
-<div id="tops" class="siemaSlider">
+<div id="tops" class="carousel">
 {% for top in page.tops %}
+<div class="top carousel--slide">
 <img src="{{ top }}" class="siemaSlider--slide" />
+</div>
 {% endfor %}
 </div>
 </div>
 
-<button onClick="shuffle()">randomize</button>
+<button onClick="shuffle()" class="randomButton"><i class="fa fa-random fa-2x"/></button>
 
 <script>
   var heads = new Flickity('#heads', {
-    wrapAround: true,
     autoPlay: false,
+    imagesLoaded: true,
+    pageDots: false,
+    wrapAround: true,
   });
 
   var tops = new Flickity('#tops', {
-    wrapAround: true,
     autoPlay: false,
+    imagesLoaded: true,
+    pageDots: false,
+    wrapAround: true,
   });
 
   var randomIndex = function(length) {
@@ -60,8 +68,8 @@ tops:
   function shuffle() {
     var randomHead = randomIndex(heads.cells.length);
     shuffling = true;
-    heads.select(randomHead);
-    tops.select(randomIndex(tops.cells.length), function() {
+    heads.selectCell(randomHead);
+    tops.selectCell(randomIndex(tops.cells.length), function() {
       console.log(tops.selectedIndex);
       shuffling = false;
     });
