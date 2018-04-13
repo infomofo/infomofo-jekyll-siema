@@ -42,7 +42,9 @@
   <link rel="canonical" href="http://localhost:4000/">
   <style>
   
-  .carousel--slide { opacity: 0.3; }
+  .carousel { height: 200px; }
+
+.carousel--slide { opacity: 0.3; }
 .carousel--slide.is-selected { opacity: 1.0; }
 .carousel--slide img { height: 200px; }
 
@@ -153,12 +155,16 @@ var heads = new Flickity('#heads', {
   autoPlay: false,
   imagesLoaded: true,
   pageDots: false,
+  prevNextButtons: false,
+  setGallerySize: false,
   wrapAround: true,
 });
 var tops = new Flickity('#tops', {
   autoPlay: false,
   imagesLoaded: true,
   pageDots: false,
+  prevNextButtons: false,
+  setGallerySize: false,
   wrapAround: true,
 });
 

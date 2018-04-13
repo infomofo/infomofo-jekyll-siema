@@ -3,12 +3,16 @@ var heads = new Flickity('#heads', {
   autoPlay: false,
   imagesLoaded: true,
   pageDots: false,
+  prevNextButtons: false,
+  setGallerySize: false,
   wrapAround: true,
 });
 var tops = new Flickity('#tops', {
   autoPlay: false,
   imagesLoaded: true,
   pageDots: false,
+  prevNextButtons: false,
+  setGallerySize: false,
   wrapAround: true,
 });
 
