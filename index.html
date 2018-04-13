@@ -1,0 +1,52 @@
+---
+layout: page
+title: Infomofo
+heads:
+  - heads/head1.jpg
+  - heads/head2.jpg
+  - heads/head3.jpg
+  - heads/head4.jpg
+  - heads/head5.jpg
+  - heads/head6.jpg
+  - heads/head7.png
+tops:
+  - tops/shirt1.jpg
+  - tops/shirt2.jpg
+  - tops/shirt3.jpg
+  - tops/shirt4.jpg
+  - tops/shirt5.jpg
+  - tops/shirt6.jpg
+  - tops/shirt7.jpg
+  - tops/shirt8.jpg
+  - tops/shirt9.jpg
+  - tops/shirt10.jpg
+  - tops/shirt11.png
+---
+<div class="main">
+  <div id="heads" class="carousel">
+    {% for head in page.heads %}
+    <div class="head carousel--slide">
+      <img src="{{ head }}" class="siemaSlider--slide"/>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div id="tops" class="carousel">
+    {% for top in page.tops %}
+    <div class="top carousel--slide">
+      <img src="{{ top }}" class="siemaSlider--slide" />
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<button onClick="shuffle()" id="randomButton" disabled>
+  <i class="fa fa-random fa-2x"></i>
+</button>
+
+{% capture scripts %}
+{% include main.js %}
+{% endcapture %}
+<script>
+  {{ scripts | uglify | strip }}
+</script>

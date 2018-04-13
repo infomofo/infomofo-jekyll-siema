@@ -62,130 +62,131 @@
     <section class="post-content">
       <div class="main">
   <div id="heads" class="carousel">
-
+    
     <div class="head carousel--slide">
-      <p><img src="heads/head1.jpg" class="siemaSlider--slide" /></p>
+      <img src="heads/head1.jpg" class="siemaSlider--slide"/>
     </div>
-
+    
     <div class="head carousel--slide">
-      <p><img src="heads/head2.jpg" class="siemaSlider--slide" /></p>
+      <img src="heads/head2.jpg" class="siemaSlider--slide"/>
     </div>
-
+    
     <div class="head carousel--slide">
-      <p><img src="heads/head3.jpg" class="siemaSlider--slide" /></p>
+      <img src="heads/head3.jpg" class="siemaSlider--slide"/>
     </div>
-
+    
     <div class="head carousel--slide">
-      <p><img src="heads/head4.jpg" class="siemaSlider--slide" /></p>
+      <img src="heads/head4.jpg" class="siemaSlider--slide"/>
     </div>
-
+    
     <div class="head carousel--slide">
-      <p><img src="heads/head5.jpg" class="siemaSlider--slide" /></p>
+      <img src="heads/head5.jpg" class="siemaSlider--slide"/>
     </div>
-
+    
     <div class="head carousel--slide">
-      <p><img src="heads/head6.jpg" class="siemaSlider--slide" /></p>
+      <img src="heads/head6.jpg" class="siemaSlider--slide"/>
     </div>
-
+    
     <div class="head carousel--slide">
-      <p><img src="heads/head7.png" class="siemaSlider--slide" /></p>
+      <img src="heads/head7.png" class="siemaSlider--slide"/>
     </div>
-
+    
   </div>
 
   <div id="tops" class="carousel">
-
+    
     <div class="top carousel--slide">
-      <p><img src="tops/shirt1.jpg" class="siemaSlider--slide" /></p>
+      <img src="tops/shirt1.jpg" class="siemaSlider--slide" />
     </div>
-
+    
     <div class="top carousel--slide">
-      <p><img src="tops/shirt2.jpg" class="siemaSlider--slide" /></p>
+      <img src="tops/shirt2.jpg" class="siemaSlider--slide" />
     </div>
-
+    
     <div class="top carousel--slide">
-      <p><img src="tops/shirt3.jpg" class="siemaSlider--slide" /></p>
+      <img src="tops/shirt3.jpg" class="siemaSlider--slide" />
     </div>
-
+    
     <div class="top carousel--slide">
-      <p><img src="tops/shirt4.jpg" class="siemaSlider--slide" /></p>
+      <img src="tops/shirt4.jpg" class="siemaSlider--slide" />
     </div>
-
+    
     <div class="top carousel--slide">
-      <p><img src="tops/shirt5.jpg" class="siemaSlider--slide" /></p>
+      <img src="tops/shirt5.jpg" class="siemaSlider--slide" />
     </div>
-
+    
     <div class="top carousel--slide">
-      <p><img src="tops/shirt6.jpg" class="siemaSlider--slide" /></p>
+      <img src="tops/shirt6.jpg" class="siemaSlider--slide" />
     </div>
-
+    
     <div class="top carousel--slide">
-      <p><img src="tops/shirt7.jpg" class="siemaSlider--slide" /></p>
+      <img src="tops/shirt7.jpg" class="siemaSlider--slide" />
     </div>
-
+    
     <div class="top carousel--slide">
-      <p><img src="tops/shirt8.jpg" class="siemaSlider--slide" /></p>
+      <img src="tops/shirt8.jpg" class="siemaSlider--slide" />
     </div>
-
+    
     <div class="top carousel--slide">
-      <p><img src="tops/shirt9.jpg" class="siemaSlider--slide" /></p>
+      <img src="tops/shirt9.jpg" class="siemaSlider--slide" />
     </div>
-
+    
     <div class="top carousel--slide">
-      <p><img src="tops/shirt10.jpg" class="siemaSlider--slide" /></p>
+      <img src="tops/shirt10.jpg" class="siemaSlider--slide" />
     </div>
-
+    
     <div class="top carousel--slide">
-      <p><img src="tops/shirt11.png" class="siemaSlider--slide" /></p>
+      <img src="tops/shirt11.png" class="siemaSlider--slide" />
     </div>
-
+    
   </div>
 </div>
 
-<p><button onclick="shuffle()" id="randomButton" disabled=""><i class="fa fa-random fa-2x"></i></button></p>
+<button onClick="shuffle()" id="randomButton" disabled>
+  <i class="fa fa-random fa-2x"></i>
+</button>
+
 
 <script>
-  var heads = new Flickity('#heads', {
-    autoPlay: false,
-    imagesLoaded: true,
-    pageDots: false,
-    wrapAround: true,
-  });
+  /** Initialize Carousels */
+var heads = new Flickity('#heads', {
+  autoPlay: false,
+  imagesLoaded: true,
+  pageDots: false,
+  wrapAround: true,
+});
+var tops = new Flickity('#tops', {
+  autoPlay: false,
+  imagesLoaded: true,
+  pageDots: false,
+  wrapAround: true,
+});
 
-  var tops = new Flickity('#tops', {
-    autoPlay: false,
-    imagesLoaded: true,
-    pageDots: false,
-    wrapAround: true,
-  });
+var randomButton = document.querySelector('#randomButton');
 
-  var randomIndex = function(length) {
-    var random = Math.random();
-    var mult = random * length;
-    return Math.floor(mult);
-  };
+var randomIndex = function(length) {
+  var random = Math.random();
+  var mult = random * length;
+  return Math.floor(mult);
+};
 
-  var randomButton = document.querySelector('#randomButton');
+function shuffle() {
+  randomButton.classList.add('fa-spin');
+  randomButton.setAttribute('disabled', true);
 
-  function shuffle() {
-    randomButton.classList.add('fa-spin');
-    randomButton.setAttribute('disabled', true);
-
-    var randomHead = randomIndex(heads.cells.length);
-    heads.selectCell(randomHead);
-    tops.selectCell(randomIndex(tops.cells.length));
-
-    window.setTimeout(function() {
-      randomButton.classList.remove('fa-spin');
-      randomButton.removeAttribute('disabled');
-    }, 800);
-  };
+  heads.selectCell(randomIndex(heads.cells.length));
+  tops.selectCell(randomIndex(tops.cells.length));
 
   window.setTimeout(function() {
-    shuffle();
-  }, 2000);
-</script>
+    randomButton.classList.remove('fa-spin');
+    randomButton.removeAttribute('disabled');
+  }, 800);
+};
 
+window.setTimeout(function() {
+  shuffle();
+}, 1000);
+</script>
 
     </section>
   </article>
