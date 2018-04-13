@@ -42,11 +42,17 @@
   <link rel="canonical" href="http://localhost:4000/TODO.html">
   <style>
   
-  .carousel { height: 200px; }
+  .carousel { height: 160px; }
+.carousel#heads { height: 128px; }
+.carousel#bottoms { height: 200px; }
+.carousel#shoes { height: 80px; }
 
 .carousel--slide { opacity: 0.3; }
 .carousel--slide.is-selected { opacity: 1.0; }
-.carousel--slide img { height: 200px; }
+.carousel--slide img { height: 160px; }
+.carousel--slide.head img { height: 128px; }
+.carousel--slide.bottom img { height: 200px; }
+.carousel--slide.shoe img { height: 80px; }
 
 #randomButton { background-color: #ff4081; border-radius: 50%; bottom: 5px; bottom: initial; box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); color: white; height: 56px; line-height: 56px; min-width: 0; position: fixed; right: 15px; top: 10px; transition-property: background-color,box-shadow; transition: .2s linear; width: 56px; z-index: 20; background-clip: padding-box; overflow: hidden; vertical-align: middle; box-sizing: border-box; white-space: nowrap; cursor: pointer; align-items: center; justify-content: center; display: flex; flex-direction: row; text-decoration: none; outline: 0; }
 @media screen and (min-width: 768px) { #randomButton { bottom: initial; right: 30px; top: 10px; } }

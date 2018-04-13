@@ -2,14 +2,15 @@
 layout: page
 title: Infomofo
 heads:
+  - heads/illustration.png
   - heads/head1.jpg
   - heads/head2.jpg
   - heads/head3.jpg
   - heads/head4.jpg
   - heads/head5.jpg
   - heads/head6.jpg
-  - heads/head7.png
 tops:
+  - tops/illustration.png
   - tops/shirt1.jpg
   - tops/shirt2.jpg
   - tops/shirt3.jpg
@@ -20,7 +21,27 @@ tops:
   - tops/shirt8.jpg
   - tops/shirt9.jpg
   - tops/shirt10.jpg
-  - tops/shirt11.png
+bottoms:
+  - bottoms/illustration.png
+  - bottoms/pants5.jpg
+  - bottoms/pants6.jpg
+  - bottoms/pants7.jpg
+  - bottoms/pants3.jpg
+  - bottoms/pants4.jpg
+  - bottoms/pants1.jpg
+  - bottoms/pants2.jpg
+shoes:
+  - shoes/illustration.png
+  - shoes/artefacts-pink.jpg
+  - shoes/shoes1.jpg
+  - shoes/shoes2.jpg
+  - shoes/shoes3.jpg
+  - shoes/shoes4.jpg
+  - shoes/shoes5.jpg
+  - shoes/shoes6.jpg
+  - shoes/shoes7.jpg
+  - shoes/shoes8.jpg
+  - shoes/rainbow-sandals-leather.jpg
 ---
 <div class="main">
   <div id="heads" class="carousel">
@@ -35,6 +56,20 @@ tops:
     {% for top in page.tops %}
     <div class="top carousel--slide">
       <img src="{{ top }}" class="siemaSlider--slide" />
+    </div>
+    {% endfor %}
+  </div>
+  <div id="bottoms" class="carousel">
+    {% for article in page.bottoms %}
+    <div class="bottom carousel--slide">
+      <img src="{{ article }}" class="siemaSlider--slide" />
+    </div>
+    {% endfor %}
+  </div>
+  <div id="shoes" class="carousel">
+    {% for article in page.shoes %}
+    <div class="shoe carousel--slide">
+      <img src="{{ article }}" class="siemaSlider--slide" />
     </div>
     {% endfor %}
   </div>

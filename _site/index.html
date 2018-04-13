@@ -42,11 +42,17 @@
   <link rel="canonical" href="http://localhost:4000/">
   <style>
   
-  .carousel { height: 200px; }
+  .carousel { height: 160px; }
+.carousel#heads { height: 128px; }
+.carousel#bottoms { height: 200px; }
+.carousel#shoes { height: 80px; }
 
 .carousel--slide { opacity: 0.3; }
 .carousel--slide.is-selected { opacity: 1.0; }
-.carousel--slide img { height: 200px; }
+.carousel--slide img { height: 160px; }
+.carousel--slide.head img { height: 128px; }
+.carousel--slide.bottom img { height: 200px; }
+.carousel--slide.shoe img { height: 80px; }
 
 #randomButton { background-color: #ff4081; border-radius: 50%; bottom: 5px; bottom: initial; box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); color: white; height: 56px; line-height: 56px; min-width: 0; position: fixed; right: 15px; top: 10px; transition-property: background-color,box-shadow; transition: .2s linear; width: 56px; z-index: 20; background-clip: padding-box; overflow: hidden; vertical-align: middle; box-sizing: border-box; white-space: nowrap; cursor: pointer; align-items: center; justify-content: center; display: flex; flex-direction: row; text-decoration: none; outline: 0; }
 @media screen and (min-width: 768px) { #randomButton { bottom: initial; right: 30px; top: 10px; } }
@@ -64,6 +70,10 @@
     <section class="post-content">
       <div class="main">
   <div id="heads" class="carousel">
+    
+    <div class="head carousel--slide">
+      <img src="heads/illustration.png" class="siemaSlider--slide"/>
+    </div>
     
     <div class="head carousel--slide">
       <img src="heads/head1.jpg" class="siemaSlider--slide"/>
@@ -89,13 +99,13 @@
       <img src="heads/head6.jpg" class="siemaSlider--slide"/>
     </div>
     
-    <div class="head carousel--slide">
-      <img src="heads/head7.png" class="siemaSlider--slide"/>
-    </div>
-    
   </div>
 
   <div id="tops" class="carousel">
+    
+    <div class="top carousel--slide">
+      <img src="tops/illustration.png" class="siemaSlider--slide" />
+    </div>
     
     <div class="top carousel--slide">
       <img src="tops/shirt1.jpg" class="siemaSlider--slide" />
@@ -137,8 +147,86 @@
       <img src="tops/shirt10.jpg" class="siemaSlider--slide" />
     </div>
     
-    <div class="top carousel--slide">
-      <img src="tops/shirt11.png" class="siemaSlider--slide" />
+  </div>
+  <div id="bottoms" class="carousel">
+    
+    <div class="bottom carousel--slide">
+      <img src="bottoms/illustration.png" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="bottom carousel--slide">
+      <img src="bottoms/pants5.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="bottom carousel--slide">
+      <img src="bottoms/pants6.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="bottom carousel--slide">
+      <img src="bottoms/pants7.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="bottom carousel--slide">
+      <img src="bottoms/pants3.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="bottom carousel--slide">
+      <img src="bottoms/pants4.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="bottom carousel--slide">
+      <img src="bottoms/pants1.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="bottom carousel--slide">
+      <img src="bottoms/pants2.jpg" class="siemaSlider--slide" />
+    </div>
+    
+  </div>
+  <div id="shoes" class="carousel">
+    
+    <div class="shoe carousel--slide">
+      <img src="shoes/illustration.png" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="shoe carousel--slide">
+      <img src="shoes/artefacts-pink.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="shoe carousel--slide">
+      <img src="shoes/shoes1.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="shoe carousel--slide">
+      <img src="shoes/shoes2.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="shoe carousel--slide">
+      <img src="shoes/shoes3.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="shoe carousel--slide">
+      <img src="shoes/shoes4.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="shoe carousel--slide">
+      <img src="shoes/shoes5.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="shoe carousel--slide">
+      <img src="shoes/shoes6.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="shoe carousel--slide">
+      <img src="shoes/shoes7.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="shoe carousel--slide">
+      <img src="shoes/shoes8.jpg" class="siemaSlider--slide" />
+    </div>
+    
+    <div class="shoe carousel--slide">
+      <img src="shoes/rainbow-sandals-leather.jpg" class="siemaSlider--slide" />
     </div>
     
   </div>
@@ -167,6 +255,22 @@ var tops = new Flickity('#tops', {
   setGallerySize: false,
   wrapAround: true,
 });
+var bottoms = new Flickity('#bottoms', {
+  autoPlay: false,
+  imagesLoaded: true,
+  pageDots: false,
+  prevNextButtons: false,
+  setGallerySize: false,
+  wrapAround: true,
+});
+var shoes = new Flickity('#shoes', {
+  autoPlay: false,
+  imagesLoaded: true,
+  pageDots: false,
+  prevNextButtons: false,
+  setGallerySize: false,
+  wrapAround: true,
+});
 
 var randomButton = document.querySelector('#randomButton');
 
@@ -182,6 +286,8 @@ function shuffle() {
 
   heads.selectCell(randomIndex(heads.cells.length));
   tops.selectCell(randomIndex(tops.cells.length));
+  bottoms.selectCell(randomIndex(bottoms.cells.length));
+  shoes.selectCell(randomIndex(shoes.cells.length));
 
   window.setTimeout(function() {
     randomButton.classList.remove('fa-spin');
@@ -191,7 +297,7 @@ function shuffle() {
 
 window.setTimeout(function() {
   shuffle();
-}, 1000);
+}, 2000);
 </script>
 
     </section>

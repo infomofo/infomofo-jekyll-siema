@@ -1,5 +1,14 @@
 .carousel {
-  height: 200px;
+  height: 160px;
+  &#heads {
+    height:128px;
+  }
+  &#bottoms {
+    height:200px;
+  }
+  &#shoes {
+    height: 80px;
+  }
 }
 
 .carousel--slide {
@@ -9,7 +18,22 @@
     opacity: 1.0;
   }
   img {
-    height: 200px;
+    height: 160px;
+  }
+  &.head {
+    img {
+      height: 128px;
+    }
+  }
+  &.bottom {
+    img {
+      height: 200px;
+    }
+  }
+  &.shoe {
+    img {
+      height: 80px;
+    }
   }
 }
 
