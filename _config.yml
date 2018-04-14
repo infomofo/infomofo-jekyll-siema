@@ -32,3 +32,5 @@ collections:
     output: true
   shoes: 
     output: true
+  projects: 
+    output: true

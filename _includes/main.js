@@ -31,6 +31,23 @@ var shoes = new Flickity('#shoes', {
   setGallerySize: false,
   wrapAround: true,
 });
+var projects = new Flickity('#projects', {
+  autoPlay: false,
+  imagesLoaded: true,
+  pageDots: false,
+  prevNextButtons: false,
+  setGallerySize: false,
+  wrapAround: true,
+});
+var networks = new Flickity('#networks', {
+  autoPlay: false,
+  imagesLoaded: true,
+  pageDots: false,
+  prevNextButtons: false,
+  setGallerySize: false,
+  wrapAround: true,
+});
+
 
 var randomButton = document.querySelector('#randomButton');
 
@@ -48,6 +65,8 @@ function shuffle() {
   tops.selectCell(randomIndex(tops.cells.length));
   bottoms.selectCell(randomIndex(bottoms.cells.length));
   shoes.selectCell(randomIndex(shoes.cells.length));
+  projects.selectCell(randomIndex(projects.cells.length));
+  networks.selectCell(randomIndex(networks.cells.length));
 
   window.setTimeout(function() {
     randomButton.classList.remove('fa-spin');

@@ -1,3 +1,6 @@
+.main {
+  padding-bottom: 20px;
+}
 .carousel {
   height: 160px;
   &#heads {
@@ -9,10 +12,17 @@
   &#shoes {
     height: 80px;
   }
+  &#projects {
+    height: 450px;
+  }
+  &#networks {
+    height: 80px;
+  }
 }
 
 .carousel--slide {
   opacity: 0.3;
+  min-width: 50px;
 
   &.is-selected{
     opacity: 1.0;
@@ -35,13 +45,66 @@
       height: 80px;
     }
   }
+
+  &.project {
+    height: 425px;
+    width: 300px;
+    background: rgb(224,224,224);
+    color: rgb(66,66,66);
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    img {
+      width: auto;
+      height: 300px;
+    }
+    a {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+
+  &.network {
+    height: 50px;
+    width: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: rgb(224,224,224);
+    color: rgb(66,66,66);
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    a {
+      display: flex;
+      flex-direction: row;
+      text-decoration: none;
+      align-items: center;
+      justify-content: center;
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
 }
 
 #randomButton {
   background-color: rgb(255,64,129);
   border-radius: 50%;
-  bottom: 5px;
-  bottom: initial;
+  bottom: 10px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   color: rgb(255,255,255);
   height: 56px;
@@ -49,7 +112,6 @@
   min-width: 0;
   position: fixed;
   right: 15px;
-  top: 10px;
   transition-property: background-color,box-shadow;
   transition: .2s linear;
   width: 56px;
@@ -77,4 +139,11 @@
     background: #ddd;
     opacity: 0.3;
   }
+}
+
+.sectionHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

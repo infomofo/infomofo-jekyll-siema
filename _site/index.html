@@ -42,21 +42,33 @@
   <link rel="canonical" href="http://localhost:4000/">
   <style>
   
-  .carousel { height: 160px; }
+  .main { padding-bottom: 20px; }
+
+.carousel { height: 160px; }
 .carousel#heads { height: 128px; }
 .carousel#bottoms { height: 200px; }
 .carousel#shoes { height: 80px; }
+.carousel#projects { height: 450px; }
+.carousel#networks { height: 80px; }
 
-.carousel--slide { opacity: 0.3; }
+.carousel--slide { opacity: 0.3; min-width: 50px; }
 .carousel--slide.is-selected { opacity: 1.0; }
 .carousel--slide img { height: 160px; }
 .carousel--slide.head img { height: 128px; }
 .carousel--slide.bottom img { height: 200px; }
 .carousel--slide.shoe img { height: 80px; }
+.carousel--slide.project { height: 425px; width: 300px; background: #e0e0e0; color: #424242; margin-left: 20px; margin-right: 20px; padding: 10px; border-radius: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.carousel--slide.project img { width: auto; height: 300px; }
+.carousel--slide.project a { display: flex; flex-direction: column; text-decoration: none; align-items: center; justify-content: flex-start; }
+.carousel--slide.network { height: 50px; width: 100px; margin-left: 20px; margin-right: 20px; padding-left: 30px; padding-right: 30px; background: #e0e0e0; color: #424242; font-size: 13px; display: flex; flex-direction: row; align-items: center; justify-content: center; border-radius: 15px; }
+.carousel--slide.network a { display: flex; flex-direction: row; text-decoration: none; align-items: center; justify-content: center; }
+.carousel--slide.network a i { margin-right: 5px; }
 
-#randomButton { background-color: #ff4081; border-radius: 50%; bottom: 5px; bottom: initial; box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); color: white; height: 56px; line-height: 56px; min-width: 0; position: fixed; right: 15px; top: 10px; transition-property: background-color,box-shadow; transition: .2s linear; width: 56px; z-index: 20; background-clip: padding-box; overflow: hidden; vertical-align: middle; box-sizing: border-box; white-space: nowrap; cursor: pointer; align-items: center; justify-content: center; display: flex; flex-direction: row; text-decoration: none; outline: 0; }
+#randomButton { background-color: #ff4081; border-radius: 50%; bottom: 10px; box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); color: white; height: 56px; line-height: 56px; min-width: 0; position: fixed; right: 15px; transition-property: background-color,box-shadow; transition: .2s linear; width: 56px; z-index: 20; background-clip: padding-box; overflow: hidden; vertical-align: middle; box-sizing: border-box; white-space: nowrap; cursor: pointer; align-items: center; justify-content: center; display: flex; flex-direction: row; text-decoration: none; outline: 0; }
 @media screen and (min-width: 768px) { #randomButton { bottom: initial; right: 30px; top: 10px; } }
 #randomButton:disabled, #randomButton[disabled] { background: #ddd; opacity: 0.3; }
+
+.sectionHeader { display: flex; flex-direction: row; justify-content: center; align-items: center; }
 
   </style>
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -230,8 +242,102 @@
     </div>
     
   </div>
+  <div class="sectionHeader">
+    <h2>projects i've worked on</h2>
+  </div>
+  <div id="projects" class="carousel">
+    
+    <div class="project carousel--slide">
+      <a target="_blank" href="" class="siemaSlider--slide">
+        <img src="projects/kit.png"/>
+        <h4>Kit</h4>
+        <p>A place to talk about the products worth getting.</p>
+      </a>
+    </div>
+    
+    <div class="project carousel--slide">
+      <a target="_blank" href="" class="siemaSlider--slide">
+        <img src="projects/gilt.png"/>
+        <h4>Gilt</h4>
+        <p>Personalization for optimizing flash sale conversion.</p>
+      </a>
+    </div>
+    
+    <div class="project carousel--slide">
+      <a target="_blank" href="" class="siemaSlider--slide">
+        <img src="projects/beerxchangeandroid.png"/>
+        <h4>BeerXchange</h4>
+        <p>A Network for collecting and trading craft beer.</p>
+      </a>
+    </div>
+    
+    <div class="project carousel--slide">
+      <a target="_blank" href="" class="siemaSlider--slide">
+        <img src="projects/gilt.png"/>
+        <h4>2 Beer Queers</h4>
+        <p>A Network for collecting and trading craft beer.</p>
+      </a>
+    </div>
+    
+    <div class="project carousel--slide">
+      <a target="_blank" href="" class="siemaSlider--slide">
+        <img src="projects/gilt.png"/>
+        <h4>Marvel Puzzle Quest Party Planner</h4>
+        <p>A Network for collecting and trading craft beer.</p>
+      </a>
+    </div>
+    
+    <div class="project carousel--slide">
+      <a target="_blank" href="" class="siemaSlider--slide">
+        <img src="projects/gilt.png"/>
+        <h4>Food I Made</h4>
+        <p>A Network for collecting and trading craft beer.</p>
+      </a>
+    </div>
+    
+  </div>
+  <div class="sectionHeader">
+    <h2>check out my</h2>
+  </div>
+  <div id="networks" class="carousel">
+    
+    <div class="network carousel--slide">
+      <a target="_blank" href="https://github.com/infomofo" class="siemaSlider--slide">
+        <i class="fa fa-2x fa-github"></i>
+        github
+      </a>
+    </div>
+    
+    <div class="network carousel--slide">
+      <a target="_blank" href="https://www.linkedin.com/in/willchiong" class="siemaSlider--slide">
+        <i class="fa fa-2x fa-linkedin-square"></i>
+        linkedin
+      </a>
+    </div>
+    
+    <div class="network carousel--slide">
+      <a target="_blank" href="https://www.instagram.com/infomofo" class="siemaSlider--slide">
+        <i class="fa fa-2x fa-instagram"></i>
+        insta
+      </a>
+    </div>
+    
+    <div class="network carousel--slide">
+      <a target="_blank" href="https://www.twitter.com/infomofo" class="siemaSlider--slide">
+        <i class="fa fa-2x fa-twitter"></i>
+        twitter
+      </a>
+    </div>
+    
+    <div class="network carousel--slide">
+      <a target="_blank" href="https://blog.infomofo.com" class="siemaSlider--slide">
+        <i class="fa fa-2x fa-rss"></i>
+        blog
+      </a>
+    </div>
+    
+  </div>
 </div>
-
 <button onClick="shuffle()" id="randomButton" disabled>
   <i class="fa fa-random fa-2x"></i>
 </button>
@@ -271,6 +377,23 @@ var shoes = new Flickity('#shoes', {
   setGallerySize: false,
   wrapAround: true,
 });
+var projects = new Flickity('#projects', {
+  autoPlay: false,
+  imagesLoaded: true,
+  pageDots: false,
+  prevNextButtons: false,
+  setGallerySize: false,
+  wrapAround: true,
+});
+var networks = new Flickity('#networks', {
+  autoPlay: false,
+  imagesLoaded: true,
+  pageDots: false,
+  prevNextButtons: false,
+  setGallerySize: false,
+  wrapAround: true,
+});
+
 
 var randomButton = document.querySelector('#randomButton');
 
@@ -288,6 +411,8 @@ function shuffle() {
   tops.selectCell(randomIndex(tops.cells.length));
   bottoms.selectCell(randomIndex(bottoms.cells.length));
   shoes.selectCell(randomIndex(shoes.cells.length));
+  projects.selectCell(randomIndex(projects.cells.length));
+  networks.selectCell(randomIndex(networks.cells.length));
 
   window.setTimeout(function() {
     randomButton.classList.remove('fa-spin');

@@ -42,6 +42,41 @@ shoes:
   - shoes/shoes7.jpg
   - shoes/shoes8.jpg
   - shoes/rainbow-sandals-leather.jpg
+projects:
+  - name: Kit
+    image: projects/kit.png
+    description: A place to talk about the products worth getting.
+  - name: Gilt
+    image: projects/gilt.png
+    description: Personalization for optimizing flash sale conversion.
+  - name: BeerXchange
+    image: projects/beerxchangeandroid.png
+    description: A Network for collecting and trading craft beer.
+  - name: 2 Beer Queers
+    image: projects/gilt.png
+    description: A Network for collecting and trading craft beer.
+  - name: Marvel Puzzle Quest Party Planner
+    image: projects/gilt.png
+    description: A Network for collecting and trading craft beer.
+  - name: Food I Made
+    image: projects/gilt.png
+    description: A Network for collecting and trading craft beer.
+networks:
+  - name: github
+    link: https://github.com/infomofo
+    icon: github
+  - name: linkedin
+    link: https://www.linkedin.com/in/willchiong
+    icon: linkedin-square
+  - name: insta
+    link: https://www.instagram.com/infomofo
+    icon: instagram
+  - name: twitter
+    link: https://www.twitter.com/infomofo
+    icon: twitter
+  - name: blog
+    link: https://blog.infomofo.com
+    icon: rss
 ---
 <div class="main">
   <div id="heads" class="carousel">
@@ -73,8 +108,34 @@ shoes:
     </div>
     {% endfor %}
   </div>
+  <div class="sectionHeader">
+    <h2>projects i've worked on</h2>
+  </div>
+  <div id="projects" class="carousel">
+    {% for article in page.projects %}
+    <div class="project carousel--slide">
+      <a target="_blank" href="{{ article.link }}" class="siemaSlider--slide">
+        <img src="{{ article.image }}"/>
+        <h4>{{ article.name }}</h4>
+        <p>{{ article.description }}</p>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="sectionHeader">
+    <h2>check out my</h2>
+  </div>
+  <div id="networks" class="carousel">
+    {% for article in page.networks %}
+    <div class="network carousel--slide">
+      <a target="_blank" href="{{ article.link }}" class="siemaSlider--slide">
+        <i class="fa fa-2x fa-{{ article.icon }}"></i>
+        {{ article.name }}
+      </a>
+    </div>
+    {% endfor %}
+  </div>
 </div>
-
 <button onClick="shuffle()" id="randomButton" disabled>
   <i class="fa fa-random fa-2x"></i>
 </button>
